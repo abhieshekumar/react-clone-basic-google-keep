@@ -1,8 +1,12 @@
 import {FaRegLightbulb, FaRegTrashAlt, FaRegFileArchive} from 'react-icons/fa';
+import { useCurrentContext } from '../../contexts/current';
 
-const Sidebar = ({current, setCurrent}) => {
+const Sidebar = () => {
+
+    const {current, setCurrent} = useCurrentContext();
+    
     return (
-        <nav className="sidebar">
+        <nav className="sidebar">            
             <div className={current===`current`?`sidebar--active`:undefined} onClick={()=>{setCurrent(`current`)}}>
                 <span>
                     <FaRegLightbulb/>

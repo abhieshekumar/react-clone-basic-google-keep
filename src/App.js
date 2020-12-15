@@ -1,21 +1,19 @@
-import { useState } from 'react';
 import Header from './components/layout/Header';
 import './App.scss';
 import Sidebar from './components/layout/Sidebar';
 import Main from './components/layout/Main';
+import { CurrentContextComponent } from './contexts/current';
 
 function App() {
 
-  const [current, setCurrent] = useState('current');
-
   return (
-    <>
+    <CurrentContextComponent>
       <Header/>
       <div style={{display: `flex`}}>
-        <Sidebar setCurrent={setCurrent} current={current}/>
-        <Main current={current}/>
+        <Sidebar/>
+        <Main/>
       </div>
-    </>
+    </CurrentContextComponent>
   );
 }
 

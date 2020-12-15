@@ -1,5 +1,5 @@
-import {colors} from '../data/notes';
-import { change } from '../hooks/useNotes';
+import {colors} from '../data';
+import { change } from '../utils';
 
 const Color = ({id=null, setColor=null}) => {
     return(

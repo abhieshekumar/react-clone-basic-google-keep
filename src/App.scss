@@ -63,6 +63,7 @@ $generic-box-shadow: 1px 1px 7px rgba(0,0,0,.1);
 .main {
     margin: 0 auto;
     margin-top: $header-height+20px;
+    min-width: 900px;
 }
 
 .newNote {
