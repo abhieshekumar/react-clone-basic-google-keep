@@ -16,6 +16,25 @@ This project has implemented Google Keep functionality using React. Apart from t
 
 ## Demo
 
+- #### Adding a new note
+![Add a new note](./showcase/1.png)
+
+- #### Options for your note. You may color, save or clear the contents using the buttons.
+![Color a new note](./showcase/2.png)
+
+- #### New note added
+![New Note Added](./showcase/3.png)
+
+- #### Edit your note. The options allow to change color, archive or trash already existing notes.
+![Edit note](./showcase/4.png)
+
+- #### Archived notes can be restored using the restore option.
+![Archive Note](./showcase/5.png)
+
+- #### Trashed notes can be removed from the bin.
+![Trash notes](./showcase/6.png)
+
+
 ## Contribute
 
 Feel free to contribute to the project. The objective while doing this project was to explore concepts of react. Therefore, things like accessibility and styling need improvement.
