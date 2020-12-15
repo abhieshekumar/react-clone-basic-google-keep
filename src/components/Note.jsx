@@ -1,16 +1,11 @@
 import {FaPaintRoller, FaRegFileArchive, FaRegTrashAlt,FaTrashRestore, FaUndo} from 'react-icons/fa';
-import {useState} from 'react';
 import Color from './Color';
-import { change } from '../hooks/useNotes';
+import { change } from '../utils';
+import { useToggle } from '../hooks/useToggle';
 
 const Note = ({id, body, color, title, isArchived, isTrash, created}) => {
 
-    const [isColor, setColor] = useState(false);
-
-    
-    const toggleColor = () => {
-        setColor(prevColor => !prevColor);
-    }
+    const [isColor, toggleIsColor, forceIsColor] = useToggle(false);
 
     return (
         <div style={{background: color}} className="note">
@@ -21,14 +16,14 @@ const Note = ({id, body, color, title, isArchived, isTrash, created}) => {
                 {body}
             </div>
             <div className="note__actions">
-                <span title="Color" onClick={toggleColor}>
+                <span title="Color" onClick={toggleIsColor}>
                     <FaPaintRoller/>
                     {isColor && <Color id={id} />}
                 </span>
-                <span title={isArchived?`Restore`:`Archive`} onClick={()=>{change(id, `isArchived`, !isArchived)}}>
+                <span title={isArchived?`Restore`:`Archive`} onClick={()=>{forceIsColor(false);change(id, `isArchived`, !isArchived)}}>
                     {isArchived?<FaUndo/>:<FaRegFileArchive/>}
                 </span>
-                <span title={isTrash?`Restore`:`Delete`} onClick={() => {change(id, `isTrash`, !isTrash)}}>
+                <span title={isTrash?`Restore`:`Delete`} onClick={() => {forceIsColor(false);change(id, `isTrash`, !isTrash)}}>
                     {isTrash?<FaTrashRestore/>:<FaRegTrashAlt/>}
                 </span>
             </div>

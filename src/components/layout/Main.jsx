@@ -1,10 +1,10 @@
 import NewNote from '../NewNote';
 import Notes from '../Notes';
 
-const Main = ({current}) => {
+const Main = () => {
     return <main className="main">
-        <NewNote current={current}/>
-        <Notes current={current}/>
+        <NewNote/>
+        <Notes/>
     </main>
 }
 

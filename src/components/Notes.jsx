@@ -1,9 +1,12 @@
+import { useCurrentContext } from '../contexts/current';
 import { useNotes } from '../hooks/useNotes';
 import Note from './Note';
 
-const Notes = ({current}) => {
+const Notes = () => {
 
     const [notes] = useNotes();
+    const {current} = useCurrentContext();
+
     let arr = [];
 
     if(current === 'current'){
